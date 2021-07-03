@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/style.css" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Weather Dashboard</title>
+
+</head>
+
+<body>
+    <!-- title/container -->
+    <div class="container-fluid bg-light px-aut0" style="width: 90%;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="titleText">Weather Dashboard</h1>
+            </div>
+        </div>
+
+        <!-- city input, search history/left sidebar -->
+        <div class="row mb-3">
+            <div class="col-12 col-md-3 ">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Search a City:</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="Default"
+                        aria-describedby="inputGroup-sizing-default">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">Submit</button>
+                    </div>
+                </div>
+
+                <!-- Seach History -->
+                <div class="card bg-info">
+                    <div class="savedSearches">
+                        <h5 class="col-sm-12 text-center bg-secondary mb-1 text-white rounded">Saved Searches:</h5>
+
+                        <!-- THESE ARE FILLERS, they will be added from javascript local storage -->
+                        <button type="button" class="btn btn-secondary mb-1">Dapibus ac facilisis in</button>
+                        <button type="button" class="btn btn-secondary mb-1">Morbi leo risus</button>
+                        <button type="button" class="btn btn-secondary mb-1">Porta ac consectetur ac</button>
+
+                    </div>
+
+                    <button id="clearHistory" class="btn btn-sm btn-dark">Clear History</button>
+                </div>
+            </div>
+        </div>
+        <!-- end row 1/ left sidebar -->
+
+        <!-- API 2 sections, current weather and 5 day forecast -->
+        <!-- SECTION 1 CURRENT WEATHER -->
+        <div class="row-fluid">
+            <div class="col-sm-12">
+                <h2 id="cityNameDisplay" class="col-sm-12 text-center bg-secondary mb-3 text-white">CityNameFiller
+                </h2>
+                <h3 id="currentWeatherCard" class="col-sm-12 text-center bg-secondary text-white">Current
+                    Conditions:</h3>
+
+                <div class="card text-white bg-info mb-3">
+                    <img class="card-img-top" src="" alt="Weather Icon">
+                    <div class="card-body">
+                        <h5 class="card-title">DateDisplayFiller</h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-secondary mb-1">TempFiller</li>
+                            <li class="list-group-item bg-secondary mb-1">WindFiller</li>
+                            <li class="list-group-item bg-secondary mb-1">HumidityFiller</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- END CURRENT WEATHER -->
+
+        <!-- SECTION 2 5DAY FORECAST -->
+        <div class="row-fluid">
+            <div class="col-sm-12">
+                <div class="card-deck">
+                    <h3 id="5DayForecast" class="col-sm-12 text-center bg-secondary text-white">Five Day
+                        Forecast:
+                    </h3>
+
+                    <div class="card col-sm-12 text-white bg-info mb-3">
+                        <img class="card-img-top" src="" alt="Weather Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">DateDisplayFiller</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-secondary mb-1">TempFiller</li>
+                                <li class="list-group-item bg-secondary mb-1">WindFiller</li>
+                                <li class="list-group-item bg-secondary mb-1">HumidityFiller</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card text-white bg-info mb-3">
+                        <img class="card-img-top" src="" alt="Weather Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">DateDisplayFiller</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-secondary mb-1">TempFiller</li>
+                                <li class="list-group-item bg-secondary mb-1">WindFiller</li>
+                                <li class="list-group-item bg-secondary mb-1">HumidityFiller</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card text-white bg-info mb-3">
+                        <img class="card-img-top" src="" alt="Weather Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">DateDisplayFiller</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-secondary mb-1">TempFiller</li>
+                                <li class="list-group-item bg-secondary mb-1">WindFiller</li>
+                                <li class="list-group-item bg-secondary mb-1">HumidityFiller</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card text-white bg-info mb-3">
+                        <img class="card-img-top" src="" alt="Weather Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">DateDisplayFiller</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-secondary mb-1">TempFiller</li>
+                                <li class="list-group-item bg-secondary mb-1">WindFiller</li>
+                                <li class="list-group-item bg-secondary mb-1">HumidityFiller</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card text-white bg-info mb-3">
+                        <img class="card-img-top" src="" alt="Weather Icon">
+                        <div class="card-body">
+                            <h5 class="card-title">DateDisplayFiller</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item bg-secondary mb-1">TempFiller</li>
+                                <li class="list-group-item bg-secondary mb-1">WindFiller</li>
+                                <li class="list-group-item bg-secondary mb-1">HumidityFiller</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
