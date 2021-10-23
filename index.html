@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Weather Dashboard</title>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container-fluid bg-dark text-white">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="titleText">Weather Dashboard</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3 searchCol">
+          <h4>Search:</h4>
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" id="cityInput" aria-describedby="button-addon2" />
+            <div class="input-group-append">
+              <button class="btn btn-outline-light" type="button" id="citySearchBtn"> > </button>
+            </div>
+          </div>
+          <div class="list-group" id="cityList"></div>
+        </div>
+
+        <div class="col-9">
+          <div class="card" style="width: 100%" id="weatherContainer"></div>
+          <div class='card-body' id='currentWeather'>
+          </div>
+          <div id="forecastContainer">
+          </div>
+        </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.js"
+      integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="assets/script.js"></script>
+  </body>
+</html>

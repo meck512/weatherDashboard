@@ -1,0 +1,25 @@
+
+.card {
+    background-color: black;
+}
+
+
+body {
+    text-align: center;
+    }
+
+.favorable{
+    background-color: green;
+    
+}
+
+.moderate{
+    background-color: orange;
+  
+}
+
+.severe{
+    background-color: red;
+   
+}
+
