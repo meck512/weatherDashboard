@@ -7,14 +7,14 @@ spawnWeather();
 
 // show search inputs as clickable list items in sidebar
 function searchHistory() {
-    $("#cityList").empty();
+    $("#cityHistory").empty();
     $("#cityInput").val("");
     for (i = 0; i < cityList.length; i++) {
         let savedCityEl = $("<a>");
         savedCityEl.addClass("list-group-item list-group-item-action list-group-item-dark text-primary city");
         savedCityEl.attr("data-name", cityList[i]);
         savedCityEl.text(cityList[i]);
-        $("#cityList").prepend(savedCityEl);
+        $("#cityHistory").prepend(savedCityEl);
     }
 }
 
@@ -46,7 +46,7 @@ function storeActiveCity() {
 }
 
 // on click load that cities weather
-$("#citySearchBtn").on("click", function (event) {
+$("#searchButton").on("click", function (event) {
     event.preventDefault();
     cityInput = $("#cityInput").val().trim();
     cityList.push(cityInput);
@@ -70,9 +70,9 @@ async function displayWeather() {
     let getCurrentCity = response.name;
     let date = new Date();
     let val = (date.getMonth() + 1) + "/" + date.getDate() + "/" + date.getFullYear();
-    let getCurrentWeatherIcon = response.weather[0].icon;
+    let getCurrentIcon = response.weather[0].icon;
 
-    let currentForecastIconEl = $("<img src = http://openweathermap.org/img/wn/" + getCurrentWeatherIcon + "@2x.png />");
+    let currentForecastIconEl = $("<img src = http://openweathermap.org/img/wn/" + getCurrentIcon + "@2x.png />");
     let currentCityEl = $("<h3 class = 'card-body'>").text(getCurrentCity + " (" + val + ")");
     currentCityEl.append(currentForecastIconEl);
     currentForecastBox.append(currentCityEl);
@@ -115,8 +115,8 @@ async function displayWeather() {
     UvIndexValue.appendTo(UvIndexEl);
     currentForecastBox.append(UvIndexEl);
 
-    $("#weatherContainer").html(currentForecastBox);
-    $("#forecastContainer").html(forecastDiv);
+    $("#weatherBox").html(currentForecastBox);
+    $("#forecastBox").html(forecastDiv);
 }
 
 async function SpawnFiveDayForecast() {
@@ -144,11 +144,11 @@ async function SpawnFiveDayForecast() {
         let val = (date.getMonth() + 1) + "/" + (date.getDate() + i + 1) + "/" + date.getFullYear();
         let forecastDate = $("<h5 class='card-title'>").text(val);
 
-        let getCurrentWeatherIcon = response.list[i].weather[0].icon;
+        let getCurrentIcon = response.list[i].weather[0].icon;
         let getTemp = response.list[i].main.temp;
         let getHumidity = response.list[i].main.humidity;
 
-        let displayWeatherIcon = $("<img src = http://openweathermap.org/img/wn/" + getCurrentWeatherIcon + ".png />");
+        let displayWeatherIcon = $("<img src = http://openweathermap.org/img/wn/" + getCurrentIcon + ".png />");
         let tempEl = $("<p class='card-text'>").text(getTemp + "°F");
         let humidityEl = $("<p class='card-text'>").text("Humidity: " + getHumidity + "%");
 
@@ -159,7 +159,7 @@ async function SpawnFiveDayForecast() {
         forecastCard.append(cardBody);
         cardDeck.append(forecastCard);
     }
-    $("#forecastContainer").html(forecastDiv);
+    $("#forecastBox").html(forecastDiv);
 }
 
 function savedCityDisplay() {
